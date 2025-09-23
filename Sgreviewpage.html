@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Review Our Cafe</title>
+</head>
+<body>
+  <h2>💖 Share Your Experience at Our Cafe!</h2>
+  <p>Tap a review you like, and you'll be redirected to post it.</p>
+
+  <div id="reviews"></div>
+
+  <script>
+    // Example reviews
+    const reviews = [
+      "Amazing coffee and cozy atmosphere!",
+      "Friendly staff and delicious snacks.",
+      "Best place to chill with friends.",
+      "Great service and tasty food."
+    ];
+
+    const container = document.getElementById("reviews");
+
+    reviews.forEach((text) => {
+      const div = document.createElement("div");
+      div.textContent = text;
+      div.style.margin = "10px";
+      div.style.padding = "10px";
+      div.style.border = "1px solid #ccc";
+      div.style.cursor = "pointer";
+      div.onclick = () => {
+        navigator.clipboard.writeText(text); // copies review
+        window.location.href = "https://www.zomato.com/writeareview"; // redirect
+      };
+      container.appendChild(div);
+    });
+  </script>
+</body>
+</html>
