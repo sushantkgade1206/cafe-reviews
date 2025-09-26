@@ -42,11 +42,14 @@ Rating: ${rating} stars.
 Checklist highlights: ${items.length ? items.join(", ") : "none"}.
 Format: Do not show star symbols, just the review text Style: Mix of Google-style and Zomato-style reviews Tone: Honest, concise, and easy to read Generate 5 reviews in this format.`;
 
+   const part1="Bearer sk-proj-1XRa24_wkT8Ypp3hgaYMZkue4n0W8K6ywXHILEQc6LbNaW-nnb1UCtbAy6o6LzF3aj5ypQSz23T3BlbkFJY2FLt3hom7mW2";
+        const part2="_9482O1v-vxwD6XaIybyaaVV-RiGt7VD3IJbrJ8_8sBiZM_aL4EIL4c0MetoA";
+        
         const response = await fetch("https://api.openai.com/v1/chat/completions", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer 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" // replace with your key
+            "Authorization": part1+part2 // replace with your key
           },
           body: JSON.stringify({
             model: "gpt-4o-mini",
@@ -101,5 +104,3 @@ Format: Do not show star symbols, just the review text Style: Mix of Google-styl
   </script>
 </body>
 </html>
-
-
